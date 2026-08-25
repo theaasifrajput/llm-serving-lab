@@ -1,0 +1,22 @@
+name: concurrency
+
+server:
+  base_url: http://localhost:8000
+
+model:
+  name: Qwen/Qwen3-8B
+
+workload:
+  requests: 100
+  prompt: "Explain how an LLM inference server works."
+  max_tokens: 256
+  temperature: 0.0
+
+benchmark:
+  concurrency:
+    - 1
+    - 2
+    - 4
+    - 8
+    - 16
+    - 32
